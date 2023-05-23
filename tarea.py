@@ -76,31 +76,39 @@ class Tipo_producto:
     
 
 
-
 #Agregacion
-tip=Tipo_producto("papeleria","supermercado","drogueria")
-impu=Impuesto(1.16,1.04,1.12)
+tip = Tipo_producto("papeleria", "supermercado", "drogueria")
+impu = Impuesto(1.16, 1.04, 1.12)
 
 deta1 = Detalle_producto(1, "pan", tip, 0.5, impu)
-print("Agregacion:\n", deta1)
+print("Agregación:")
+print(f"Detalle del producto: {deta1}")
+print("=" * 30)
 
-
-
-
-#Compososicion
-p1=Producto(1,23,12,0)
+# Composición
+p1 = Producto(1, 23, 12, 0)
 p1.calcular(deta1)
-print("\nComposicion producto:\n",p1)
+print("\nComposición del producto:")
+print(f"Producto ID: {p1.id_producto}")
+print(f"Cantidad de venta: {p1.cant_venta}")
+print(f"Cantidad mínima: {p1.cant_min}")
+print(f"Detalle del producto: {p1.detalle[0]}")
+print("=" * 30)
 
-tienda=Tienda(1,"saldo cuenta")
+tienda = Tienda(1, "saldo cuenta")
 tienda.calcular(p1)
-print("\nComposicion tienda:\n",tienda)
+print("\nComposición de la tienda:")
+print(f"ID de la tienda: {tienda.id_tienda}")
+print(f"Saldo en caja: {tienda.saldo_caja}")
+print(f"Producto en la tienda: {tienda.producto[0]}")
+print("=" * 30)
 
-
-#Agregacion
-invent=Inventario(1,p1,"calculo")
-print("\nAgregacion Inventario:\n",invent)
-
-
+# Agregación
+invent = Inventario(1, p1, "calculo")
+print("\nAgregación del inventario:")
+print(f"ID del inventario: {invent.id_inventario}")
+print(f"Producto en el inventario: {invent.producto}")
+print(f"Cantidad actual: {invent.cant_actual}")
+print("=" * 30)
 
 
